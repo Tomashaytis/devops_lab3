@@ -21,8 +21,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build TestServer
-      run: dotnet build --no-restore ./TestServer
+      run: dotnet build --no-restore ./TestServer/TestServer.csproj
     - name: Build TestServerTests
-      run: dotnet build --no-restore ./TestServerTests
+      run: dotnet build --no-restore ./TestServerTests/TestServerTests.csproj
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ./TestServerTests/TestServerTests.csproj --no-build --verbosity normal
